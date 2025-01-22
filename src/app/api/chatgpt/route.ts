@@ -7,8 +7,9 @@ const openai = new OpenAI({
   apiKey: process.env.CHATGPT_API_KEY
 });
  
-// Set the runtime to edge for best performance
-export const runtime = 'edge';
+// // Set the runtime to edge for best performance
+// export const runtime = 'edge';
+export const dynamic = 'force-dynamic'; 
  
 export async function POST(req: Request) {
   const { messages } = await req.json();

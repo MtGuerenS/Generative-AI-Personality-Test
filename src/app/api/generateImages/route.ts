@@ -1,5 +1,8 @@
 import Together from "together-ai";
 
+// Set the runtime to edge for best performance
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   const { prompt } = await req.json();
 
