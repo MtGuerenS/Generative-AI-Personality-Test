@@ -28,7 +28,6 @@ export default function Chat() {
   const [questionReady, setQuestionReady] = useState(true);
   const [imageB64, setImageB64] = useState("");
   const [] = useState(false);
-  const currentUrl = window.location.href;
 
   const [question, setQuestion] = useState({ background: "", choices: [""] });
   const [number, setNumber] = useState(0);
@@ -44,7 +43,7 @@ export default function Chat() {
   });
 
   const { messages, handleSubmit, reload, append } = useChat({
-    api: `${currentUrl}/api/chatgpt`,
+    api: "/api/chatgpt",
     onFinish: async (message: Message) => {
       try {
         const response = await fetch("/api/generateImages", {
